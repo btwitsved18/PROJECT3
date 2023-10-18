@@ -1,0 +1,95 @@
+body{
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+.switch{
+    position: relative;
+    width: 400px;
+    height: 80px;
+    border-radius: 25px;
+}
+.switch input{
+    appearance: none;
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    background: black;
+    outline: none;
+}
+
+.switch input::before{
+z-index: 2;
+    position:absolute;
+    top: 56%;
+    transform: translate(-50%);
+    font-weight: bolder;
+}
+.switch input::after{
+    z-index: 2;
+    position:absolute;
+    top: 56%;
+    transform: translate(-50%);
+    font-weight: bolder;
+}
+
+.switch input::before{
+    content: " LButton";
+    left: 55px;
+}
+.switch input::after{
+    content: "RButton";
+    right: 5px;
+}
+
+.switch input:checked{
+    background: white;
+}
+.switch label{
+    z-index: 1;
+    position: absolute;
+    top: 10px;
+    bottom: 2px;
+    border-radius: 20px;
+}
+
+.switch input{
+    transition: 0.25s;
+}
+
+.switch input:checked::before{
+    color:grey;
+    transition: color 0.5s;
+}
+
+.switch input:checked::after{
+    color:grey;
+    transition: color 0.5s;
+}
+
+.switch input:checked+label{
+    left: 10px;
+    right: 100px;
+    background: grey;
+    transition: left 0.5s , right 0.4s 0.2s;
+}
+
+.switch input:not(:checked){
+    background: white;
+    transition: color 0.5s;
+}
+
+.switch input:not(:checked)::after{
+    color: skyblue;
+    transition: color 0.5s 0.2s;
+}
+
+.switch input:not(:checked)+label{
+    left: 100px;
+    right: 10px;
+    background: skyblue;
+    transition: left 0.4s 0.2s , right 0.5s , background 0.35s;
+}
